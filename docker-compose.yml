@@ -1,0 +1,26 @@
+#James Grigg
+version: "3.6"
+services:
+  nginx:
+    #build: ./nginx
+    image: grigjm1/nginx
+    deploy:
+      replicas: 3
+    ports:
+      - 80:80
+    networks:
+      - app
+  flaskapp:
+    #build: ./flaskapp
+    image: grigjm1/flaskapp
+    networks:
+      - app
+    deploy:
+      replicas: 3
+  redis:
+    image: redis:5.0.6
+    networks: 
+      - app
+networks: 
+  app:
+    driver: overlay
