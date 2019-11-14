@@ -1,6 +1,7 @@
 #James Grigg
 FROM ubuntu:16.04
-LABEL updated_on="2019-10-18 09:00"
+MAINTAINER James Grigg <grigjm1@student.op.ac.nz>
+ENV updated_on="2019-10-18 09:00"
 
 RUN apt-get update
 RUN apt-get -y upgrade
